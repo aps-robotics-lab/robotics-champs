@@ -3,138 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="APS Robotics Championship 2026 — robotics, engineering and innovation at Army Public School Lal Bahadur Shastri Marg, Lucknow.">
+<meta name="theme-color" content="#050914">
 <title>APS Robotics Championship 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="preloader" class="preloader"><div class="loader-grid"></div><div class="loader-mark">APS</div><div class="loader-title">ROBOTICS CHAMPIONSHIP</div><div class="loader-sub">SYSTEM INITIALIZING // 2026</div></div>
+<div id="preloader" class="preloader">
+  <div class="loader-core"><span></span><span></span><span></span></div>
+  <div class="loader-title">APS ROBOTICS</div>
+  <div class="loader-sub">CHAMPIONSHIP 2026</div>
+</div>
 
 <header class="site-header" id="siteHeader">
   <a class="brand" href="#home">
-    <img src="https://i.ibb.co/60g82LzR/Army-Welfare-Education-Society-logo-1.png" alt="APS Logo">
-    <span><b>APS</b><small>ROBOTICS CHAMPIONSHIP 2026</small></span>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Army_Welfare_Education_Society_logo.png" alt="APS Logo">
+    <span><b>APS ROBOTICS</b><small>CHAMPIONSHIP 2026</small></span>
   </a>
-  <div class="header-status"><i></i> SYSTEM ONLINE</div>
   <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="mainNav">
-    <a class="active" href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#events">EVENTS</a>
-    <a href="#messages">MESSAGES</a>
-    <a href="#team">TEAM</a>
-    <a href="#contact">CONTACT</a>
-    <a href="rules.html">RULES</a>
-    <a class="nav-register" href="registration.html">REGISTER ↗</a>
-    <a href="help.html">HELP</a>
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="rules.html">Rules</a>
+    <a href="registration.html">Registration</a>
+    <a href="#events">Events</a>
+    <a href="#messages">Messages</a>
+    <a href="#contact">Contact</a>
+    <a href="#robotics-team">Our Team</a>
+    <a href="help.html">Help</a>
+    <a href="agent.html">Agent Login</a>
+    <div class="admin-agent-links">
+    <a href="admin.html">Admin</a>
+    <a href="agent.html">Agent</a>
+    </div>
   </nav>
 </header>
 
 <main>
 <section id="home" class="hero">
-  <div class="hero-noise"></div>
-  <div class="hero-lines"></div>
-  <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
   <div class="hero-content">
-    <div class="hero-kicker"><span>ARMY PUBLIC SCHOOL</span><b>// LUCKNOW</b></div>
-    <div class="hero-date">2026 <span>•</span> APS TINKERING LAB</div>
-    <h1 id="adminHomeTitle">ROBOTICS<br><em>CHAMPIONSHIP</em><sup>26</sup></h1>
-    <p id="adminHomeDescription">Build. Battle. Innovate. A student-powered arena where ideas become machines and engineering becomes competition.</p>
+    <div class="eyebrow" id="adminHomeEyebrow">APS TINKERING LAB • LUCKNOW</div>
+    <h1 id="adminHomeTitle">APS <span>ROBOTICS</span><br>CHAMPIONSHIP <em>2026</em></h1>
+    <p id="adminHomeDescription">Build. Battle. Innovate. Experience the future of robotics with young innovators and creators.</p>
     <div class="hero-actions">
-      <a class="hero-btn primary" href="registration.html" id="adminHomeButton">REGISTER YOUR TEAM <span>↗</span></a>
-      <a class="hero-btn text" href="#events">EXPLORE EVENTS <span>↓</span></a>
+      <a class="btn primary" href="registration.html" id="adminHomeButton">Register Your Team <span>→</span></a>
+      <a class="btn ghost" href="rules.html">Explore Rules</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>04</b><span>Events</span></div>
+      <div><b>01</b><span>Championship</span></div>
+      <div><b>∞</b><span>Innovation</span></div>
     </div>
   </div>
-  <div class="hero-visual" aria-hidden="true">
-    <div class="radar"><div class="radar-sweep"></div><div class="radar-dot dot-1"></div><div class="radar-dot dot-2"></div><div class="radar-dot dot-3"></div></div>
-    <div class="robot-core"><span>R</span></div>
-    <div class="visual-label label-top">ENGINEERING / 01</div>
-    <div class="visual-label label-bottom">BUILD // TEST // COMPETE</div>
+  <div class="robot-visual" aria-hidden="true">
+    <div class="radar-hud"></div>
+    <img src="assets/skull-insect-radar.png" alt="Skull insect radar visual">
+    <span class="radar-label">SKULL//INSECT • RADAR ACTIVE</span>
   </div>
-  <div class="hero-side">SCROLL TO DISCOVER <span>↓</span></div>
-  <div class="hero-bottom"><span>APS TINKERING LAB</span><span>LUCKNOW · INDIA</span><span>01—04 EVENTS</span></div>
 </section>
 
-<section class="ticker" aria-label="Championship highlights">
-  <div>ROBOTICS <b>✦</b> INNOVATION <b>✦</b> ENGINEERING <b>✦</b> TEAMWORK <b>✦</b> COMPETITION <b>✦</b> ROBOTICS <b>✦</b> INNOVATION <b>✦</b> ENGINEERING <b>✦</b></div>
+<section id="welcome" class="welcome-section">
+  <div class="welcome-inner">
+    <div class="welcome-badge">WELCOME TO APS ROBOTICS CHAMPIONSHIP 2026</div>
+    <h2>Welcome, <b>Young Innovators.</b></h2>
+    <p>Welcome to the APS Robotics Championship 2026, organised by the APS Tinkering Lab of Army Public School Lal Bahadur Shastri Marg, Lucknow. Bring your ideas, build with purpose, compete fairly and learn from every challenge.</p>
+    <div class="welcome-points"><span>⚙️ Build</span><span>⚡ Compete</span><span>🤝 Collaborate</span><span>🏆 Learn</span></div>
+  </div>
 </section>
 
-<section id="about" class="phase-section">
-  <div class="phase-number">/ PHASE_01</div>
-  <div class="phase-grid">
-    <div class="phase-label">THE<br>MISSION</div>
-    <div>
-      <div class="section-tag">01 / ABOUT THE CHAMPIONSHIP</div>
-      <h2>WHERE <span>IDEAS</span><br>BECOME MACHINES.</h2>
-      <p id="adminAboutDescription">APS Robotics Championship 2026 is a hands-on robotics competition designed to encourage creativity, engineering, teamwork and problem solving.</p>
-      <div class="phase-facts">
-        <div><b>01</b><span>DESIGN</span><small>Turn concepts into working systems.</small></div>
-        <div><b>02</b><span>BUILD</span><small>Engineer, assemble and test.</small></div>
-        <div><b>03</b><span>COMPETE</span><small>Take your robot into the arena.</small></div>
+<section id="about" class="section">
+  <div class="section-head"><span>01 / ABOUT</span><h2 id="adminAboutTitle">Where Ideas Become <b>Machines</b></h2><p id="adminAboutDescription">APS Robotics Championship 2026 is a hands-on robotics competition designed to encourage creativity, engineering, teamwork and problem solving.</p></div>
+  <div class="about-grid">
+    <article class="glass"><span class="card-no">01</span><h3>Innovation</h3><p>Turn concepts into working robotic systems through design, testing and iteration.</p></article>
+    <article class="glass"><span class="card-no">02</span><h3>Teamwork</h3><p>Collaborate, communicate and compete as a focused robotics team.</p></article>
+    <article class="glass"><span class="card-no">03</span><h3>Competition</h3><p>Challenge your robot across four exciting championship events.</p></article>
+  </div>
+</section>
+
+<section id="events" class="section dark-section">
+  <div class="section-head"><span>02 / EVENTS</span><h2>Choose Your <b>Battlefield</b></h2><p>Compete in one or more events according to the championship registration rules.</p></div>
+  <div class="event-grid">
+    <article class="event-card"><i>01</i><h3>Robo Race</h3><p>Speed, control and precision on the track.</p></article>
+    <article class="event-card"><i>02</i><h3>Robo War</h3><p>Strategy, engineering and controlled robotic combat.</p></article>
+    <article class="event-card"><i>03</i><h3>Robo Tug of War</h3><p>Power, traction and mechanical strength.</p></article>
+    <article class="event-card"><i>04</i><h3>Robo Soccer</h3><p>Team coordination meets robotic football.</p></article>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="cta"><span>READY TO ENTER THE ARENA?</span><h2>Build Your Team.<br><b>Make Your Mark.</b></h2><a class="btn primary" href="registration.html">Start Registration →</a></div>
+</section>
+
+<div id="messages">
+  <section class="section message-section">
+    <div class="section-head"><span>03 / LEADERSHIP</span><h2>A Message from <b>The Principal</b></h2></div>
+    <div class="mentor-message">
+      <div class="message-mark">“</div>
+      <div>
+        <p class="quote" id="msgPrincipalText">Loading message...</p>
+        <div class="mentor-sign"><strong id="msgPrincipalName">Mrs. Sadhana Devi</strong><span>Principal • Army Public School Lal Bahadur Shastri Marg, Lucknow</span></div>
       </div>
     </div>
+  </section>
+
+  <section class="section message-section">
+    <div class="section-head"><span>04 / GUIDANCE</span><h2>A Message from <b>Our Mentor</b></h2></div>
+    <div class="mentor-message">
+      <div class="message-mark">“</div>
+      <div>
+        <p class="quote" id="msgMentorText">Loading message...</p>
+        <div class="mentor-sign"><strong id="msgMentorName">Akansha Rani</strong><span>Mentor • APS Tinkering Lab</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section message-section">
+    <div class="section-head"><span>05 / COORDINATION</span><h2>A Message from <b>The Coordinator</b></h2></div>
+    <div class="mentor-message">
+      <div class="message-mark">“</div>
+      <div>
+        <p class="quote" id="msgCoordText">Loading message...</p>
+        <div class="mentor-sign"><strong id="msgCoordName">Championship Coordination Team</strong><span>Championship Coordination</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section message-section">
+    <div class="section-head"><span>06 / COMMUNITY</span><h2>A Message from <b>The Team</b></h2></div>
+    <div class="mentor-message">
+      <div class="message-mark">“</div>
+      <div>
+        <p class="quote" id="msgTeamText">Loading message...</p>
+        <div class="mentor-sign"><strong id="msgTeamName">Organising Team</strong><span>APS Robotics Championship</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section id="robotics-team" class="section robotics-team-section">
+  <div class="section-head team-section-head">
+    <span>07 / ROBOTICS TEAM</span>
+    <h2>The People Behind <b>The Mission</b></h2>
+    <p>Meet the organising structure powering the APS Robotics Championship — leadership, operations, logistics, marketing and technology.</p>
+  </div>
+
+  <div class="team-command-grid">
+    <article class="team-command-panel core-panel">
+      <div class="team-panel-title"><span>01</span><div><small>CORE LEADERSHIP</small><h3>Vision • Strategy • Excellence</h3></div></div>
+      <div class="role-grid role-grid-four">
+        <article class="role-card"><span class="role-icon">◆</span><small>LEADERSHIP</small><h4>Event Manager</h4><p>Overall event direction and execution.</p></article>
+        <article class="role-card"><span class="role-icon">◈</span><small>EVENT-WISE</small><h4>Event Coordinator</h4><p>Coordinator assigned to every championship event.</p></article>
+        <article class="role-card"><span class="role-icon">▣</span><small>ADMINISTRATION</small><h4>Secretary</h4><p>Records, communication and official coordination.</p></article>
+        <article class="role-card role-empty"><span class="role-icon">+</span><small>TEAM STRUCTURE</small><h4>Organising Core</h4><p>Supporting leadership across the championship.</p></article>
+      </div>
+      <div class="event-coordinator-strip">
+        <span>EVENT COORDINATORS</span>
+        <b>Robo Race</b><b>Robo War</b><b>Robo Tug of War</b><b>Robo Soccer</b>
+      </div>
+    </article>
+
+    <article class="team-command-panel logistics-panel">
+      <div class="team-panel-title"><span>02</span><div><small>LOGISTICS &amp; OPERATIONS</small><h3>Managed • Organised • Executed</h3></div></div>
+      <div class="role-grid role-grid-two">
+        <article class="role-card"><span class="role-icon">⌁</span><small>OPERATIONS</small><h4>Logistics Manager</h4><p>Movement, equipment, resources and event readiness.</p></article>
+        <article class="role-card"><span class="role-icon">⌖</span><small>VENUE</small><h4>Venue Manager</h4><p>Venue setup, zones, access and on-ground coordination.</p></article>
+      </div>
+    </article>
+
+    <article class="team-command-panel marketing-panel">
+      <div class="team-panel-title"><span>03</span><div><small>MARKETING &amp; TECH</small><h3>Reach • Build • Innovate</h3></div></div>
+      <div class="role-grid role-grid-three">
+        <article class="role-card"><span class="role-icon">✦</span><small>OUTREACH</small><h4>Marketing Head</h4><p>Promotion, communication and championship reach.</p></article>
+        <article class="role-card"><span class="role-icon">&lt;/&gt;</span><small>DIGITAL</small><h4>Web Developer</h4><p>Website experience, digital systems and updates.</p></article>
+        <article class="role-card"><span class="role-icon">⚙</span><small>TECHNOLOGY</small><h4>Technical Head</h4><p>Technical direction, systems and technology support.</p></article>
+      </div>
+    </article>
   </div>
 </section>
 
-<section id="events" class="events-section">
-  <div class="events-head"><div><span class="section-tag">/ PHASE_02</span><h2>THE <em>ARENA</em></h2></div><p>Four events. Four ways to prove what your robot can do.</p></div>
-  <div class="event-stack">
-    <a class="event-row" href="registration.html"><span class="event-index">01</span><div class="event-title"><h3>ROBO RACE</h3><p>Speed / Control / Precision</p></div><span class="event-arrow">↗</span></a>
-    <a class="event-row" href="registration.html"><span class="event-index">02</span><div class="event-title"><h3>ROBO WAR</h3><p>Strategy / Engineering / Arena</p></div><span class="event-arrow">↗</span></a>
-    <a class="event-row" href="registration.html"><span class="event-index">03</span><div class="event-title"><h3>ROBO TUG OF WAR</h3><p>Traction / Power / Strength</p></div><span class="event-arrow">↗</span></a>
-    <a class="event-row" href="registration.html"><span class="event-index">04</span><div class="event-title"><h3>ROBO SOCCER</h3><p>Control / Teamwork / Goals</p></div><span class="event-arrow">↗</span></a>
-  </div>
-</section>
-
-<section class="feature-section">
-  <div class="feature-card">
-    <div class="feature-meta"><span>APS ROBOTICS // 2026</span><span>FIELD PROTOCOL</span></div>
-    <div class="feature-copy"><span class="section-tag">BUILT FOR YOUNG INNOVATORS</span><h2>BUILD<br><i>BOLD.</i></h2><p>Bring your idea, your team and your engineering mindset. The arena is waiting.</p><a class="hero-btn primary" href="registration.html">ENTER THE ARENA ↗</a></div>
-    <div class="feature-art"><div class="cube c1"></div><div class="cube c2"></div><div class="cube c3"></div><div class="feature-ring"></div></div>
-  </div>
-</section>
-
-<section id="messages" class="message-section">
-  <div class="section-tag">/ PHASE_03 — VOICES</div>
-  <h2>THE PEOPLE<br><span>BEHIND THE MISSION.</span></h2>
-  <div class="message-list">
-    <article class="message-row"><span>01</span><div><small>PRINCIPAL</small><p id="msgPrincipalText">Loading message...</p><strong id="msgPrincipalName">Sadhna Devi</strong></div></article>
-    <article class="message-row"><span>02</span><div><small>MENTOR</small><p id="msgMentorText">Loading message...</p><strong id="msgMentorName">Akansha Rani</strong></div></article>
-    <article class="message-row"><span>03</span><div><small>COORDINATION</small><p id="msgCoordText">Loading message...</p><strong id="msgCoordName">Championship Coordination Team</strong></div></article>
-    <article class="message-row"><span>04</span><div><small>ORGANISING TEAM</small><p id="msgTeamText">Loading message...</p><strong id="msgTeamName">APS Robotics Championship Team</strong></div></article>
-  </div>
-</section>
-
-<section id="team" class="team-section">
-  <div class="team-head"><span class="section-tag">/ PHASE_04 — OUR TEAM</span><h2>THE <span>CREW</span></h2><p>The people helping students turn ideas into engineering experiences.</p></div>
-  <div class="team-grid">
-    <article class="team-card"><div class="team-photo"><img id="principalPhoto" src="assets/principal.svg" alt="Principal"></div><small>PRINCIPAL</small><h3 id="principalName">Sadhna Devi</h3><p>Army Public School Lal Bahadur Shastri Marg, Lucknow</p></article>
-    <article class="team-card"><div class="team-photo"><img id="mentorPhoto" src="assets/mentor.svg" alt="Mentor"></div><small>MENTOR</small><h3 id="mentorName">Akansha Rani</h3><p>APS Tinkering Lab</p></article>
-    <article class="team-card"><div class="team-photo"><img id="coordinatorPhoto" src="assets/coordinator.svg" alt="Coordinator"></div><small>COORDINATION</small><h3 id="coordinatorName">Championship Coordination Team</h3><p>Event planning, coordination and competition support</p></article>
-    <article class="team-card team-support"><div class="support-mark">?</div><small>HELP CENTER</small><h3>PARTICIPANT SUPPORT</h3><p>Track support requests using your APS-XXXXX reference ID.</p><a href="help.html">OPEN HELP CENTER ↗</a></article>
-  </div>
-</section>
-
-<section id="contact" class="contact-section">
-  <div class="contact-left"><span class="section-tag">/ FINAL TRANSMISSION</span><h2>READY TO<br><em>COMPETE?</em></h2><p>Register your team, read the rules and prepare your robot for the APS Robotics Championship 2026.</p><a class="hero-btn primary" href="registration.html">START REGISTRATION ↗</a></div>
-  <div class="contact-right">
-    <div><small>SCHOOL</small><strong>ARMY PUBLIC SCHOOL<br>LAL BAHADUR SHASTRI MARG</strong><span>Lucknow, Uttar Pradesh, India</span></div>
-    <div><small>MENTOR CONTACT</small><strong><a href="mailto:raniakansha551@gmail.com">raniakansha551@gmail.com</a></strong><span>APS Tinkering Lab</span></div>
-    <div><small>SUPPORT</small><strong><a href="help.html">OPEN HELP CENTER ↗</a></strong><span>Participant assistance & tickets</span></div>
+<section id="contact" class="section">
+  <div class="section-head"><span>08 / CONTACT</span><h2>Get In <b>Touch</b></h2><p>Connect with the APS Tinkering Lab for championship-related information.</p></div>
+  <div class="contact-grid">
+    <div class="contact-card"><small>SCHOOL</small><h3>Army Public School Lal Bahadur Shastri Marg</h3><p>Lucknow, Uttar Pradesh, India</p></div>
+    <div class="contact-card mentor-contact"><small>MENTOR • AKANSHA RANI</small><h3><a href="mailto:raniakansha551@gmail.com">raniakansha551@gmail.com</a></h3><p>APS Tinkering Lab</p></div>
+    <div class="contact-card"><small>SUPPORT</small><h3><a href="help.html">Open Help Center</a></h3><p>Submit a support request and receive a ticket ID.</p></div>
   </div>
 </section>
 </main>
 
 <footer class="footer">
-  <div class="footer-brand"><img src="https://i.ibb.co/60g82LzR/Army-Welfare-Education-Society-logo-1.png" alt="APS Logo"><div><b>APS ROBOTICS CHAMPIONSHIP 2026</b><span>APS Tinkering Lab · Lucknow</span></div></div>
-  <div class="footer-links"><a href="rules.html">RULES</a><a href="registration.html">REGISTER</a><a href="help.html">HELP</a></div>
-  <span class="copyright">© 2026 APS</span>
+  <img src="https://upload.wikimedia.org/wikipedia/en/4/42/Army_Welfare_Education_Society_logo.png" alt="APS Logo">
+  <div><b>APS ROBOTICS CHAMPIONSHIP 2026</b><span>APS Tinkering Lab • Lucknow</span></div>
 </footer>
-<a href="admin-login.html" class="hidden-admin-link" aria-label="Admin Portal">Admin</a>
+<!-- Hidden Admin Access -->
+<a
+    href="admin-login.html"
+    class="hidden-admin-link"
+    aria-label="Admin Portal">
+    Admin
+</a>
 <script src="script.js"></script>
 <script type="module" src="home-content.js"></script>
 </body>
