@@ -1,0 +1,1421 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="theme-color"
+    content="#030712"
+>
+
+<meta
+    name="description"
+    content="APS Robotics Championship 2026 Registration Successful"
+>
+
+<title>
+    Registration Successful | APS Robotics Championship 2026
+</title>
+
+
+<!-- Fonts -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* =====================================================
+       BODY
+    ===================================================== */
+
+    body {
+
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 30px 18px;
+
+        overflow-x: hidden;
+
+        color: #ffffff;
+
+        font-family: "Poppins", sans-serif;
+
+        background:
+
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(25, 230, 255, .13),
+                transparent 28%
+            ),
+
+            radial-gradient(
+                circle at 85% 80%,
+                rgba(25, 230, 255, .10),
+                transparent 30%
+            ),
+
+            linear-gradient(
+                135deg,
+                #02050c 0%,
+                #06101c 50%,
+                #02050c 100%
+            );
+
+        position: relative;
+
+    }
+
+
+    /* =====================================================
+       BACKGROUND GRID
+    ===================================================== */
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        opacity: .18;
+
+        background-image:
+
+            linear-gradient(
+                rgba(25, 230, 255, .08) 1px,
+                transparent 1px
+            ),
+
+            linear-gradient(
+                90deg,
+                rgba(25, 230, 255, .08) 1px,
+                transparent 1px
+            );
+
+        background-size:
+            45px 45px;
+
+        mask-image:
+            linear-gradient(
+                to bottom,
+                transparent,
+                black 20%,
+                black 80%,
+                transparent
+            );
+
+    }
+
+
+    /* =====================================================
+       FLOATING GLOW
+    ===================================================== */
+
+    .glow {
+
+        position: fixed;
+
+        width: 320px;
+        height: 320px;
+
+        border-radius: 50%;
+
+        background: rgba(25, 230, 255, .08);
+
+        filter: blur(70px);
+
+        pointer-events: none;
+
+        animation:
+            floatGlow 7s ease-in-out infinite;
+
+    }
+
+
+    .glow.one {
+
+        top: -140px;
+        left: -120px;
+
+    }
+
+
+    .glow.two {
+
+        bottom: -150px;
+        right: -100px;
+
+        animation-delay: -3s;
+
+    }
+
+
+    @keyframes floatGlow {
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(25px, -20px);
+        }
+
+    }
+
+
+    /* =====================================================
+       MAIN CARD
+    ===================================================== */
+
+    .card {
+
+        width: min(
+            680px,
+            100%
+        );
+
+        position: relative;
+
+        padding:
+            42px
+            34px
+            34px;
+
+        text-align: center;
+
+        border:
+
+            1px solid
+            rgba(25, 230, 255, .22);
+
+        border-radius: 30px;
+
+        background:
+
+            linear-gradient(
+                145deg,
+                rgba(10, 24, 39, .96),
+                rgba(4, 12, 23, .94)
+            );
+
+        box-shadow:
+
+            0 35px 100px
+            rgba(0, 0, 0, .65),
+
+            0 0 60px
+            rgba(25, 230, 255, .06),
+
+            inset 0 1px 0
+            rgba(255, 255, 255, .06);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        overflow: hidden;
+
+        animation:
+            cardIn .8s
+            cubic-bezier(.2,.8,.2,1)
+            both;
+
+    }
+
+
+    @keyframes cardIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px)
+                scale(.96);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TOP LINE
+    ===================================================== */
+
+    .card::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                #19e6ff,
+                transparent
+            );
+
+        box-shadow:
+            0 0 20px
+            rgba(25, 230, 255, .8);
+
+    }
+
+
+    /* =====================================================
+       CORNER DECORATIONS
+    ===================================================== */
+
+    .corner {
+
+        position: absolute;
+
+        width: 45px;
+        height: 45px;
+
+        border-color:
+            rgba(25, 230, 255, .5);
+
+        pointer-events: none;
+
+    }
+
+
+    .corner.top-left {
+
+        top: 18px;
+        left: 18px;
+
+        border-top: 1px solid;
+        border-left: 1px solid;
+
+    }
+
+
+    .corner.top-right {
+
+        top: 18px;
+        right: 18px;
+
+        border-top: 1px solid;
+        border-right: 1px solid;
+
+    }
+
+
+    .corner.bottom-left {
+
+        bottom: 18px;
+        left: 18px;
+
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+
+    }
+
+
+    .corner.bottom-right {
+
+        bottom: 18px;
+        right: 18px;
+
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .brand {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .logo {
+
+        width: 72px;
+        height: 72px;
+
+        object-fit: contain;
+
+        filter:
+            drop-shadow(
+                0 0 14px
+                rgba(25, 230, 255, .25)
+            );
+
+        animation:
+            logoFloat 4s ease-in-out infinite;
+
+    }
+
+
+    @keyframes logoFloat {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+
+    }
+
+
+    .brand-text {
+
+        text-align: left;
+
+    }
+
+
+    .brand-text small {
+
+        display: block;
+
+        color: #718198;
+
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .brand-text strong {
+
+        display: block;
+
+        margin-top: 3px;
+
+        font-family: "Orbitron", sans-serif;
+
+        font-size: 14px;
+
+        letter-spacing: .8px;
+
+        color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       SUCCESS ICON
+    ===================================================== */
+
+    .success-wrapper {
+
+        display: flex;
+
+        justify-content: center;
+
+        margin:
+            8px
+            0
+            25px;
+
+    }
+
+
+    .success-ring {
+
+        width: 104px;
+        height: 104px;
+
+        display: grid;
+
+        place-items: center;
+
+        border-radius: 50%;
+
+        border:
+            1px solid
+            rgba(25, 230, 255, .45);
+
+        background:
+            rgba(25, 230, 255, .06);
+
+        box-shadow:
+
+            0 0 0 8px
+            rgba(25, 230, 255, .025),
+
+            0 0 35px
+            rgba(25, 230, 255, .18);
+
+        animation:
+            successPulse 2.5s
+            ease-in-out infinite;
+
+    }
+
+
+    @keyframes successPulse {
+
+        0%,
+        100% {
+
+            box-shadow:
+
+                0 0 0 8px
+                rgba(25, 230, 255, .025),
+
+                0 0 35px
+                rgba(25, 230, 255, .18);
+
+        }
+
+        50% {
+
+            box-shadow:
+
+                0 0 0 15px
+                rgba(25, 230, 255, .015),
+
+                0 0 55px
+                rgba(25, 230, 255, .28);
+
+        }
+
+    }
+
+
+    .check {
+
+        width: 70px;
+        height: 70px;
+
+        display: grid;
+
+        place-items: center;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                145deg,
+                #19e6ff,
+                #0cb9d2
+            );
+
+        color: #021019;
+
+        font-size: 38px;
+
+        font-weight: 800;
+
+        box-shadow:
+            0 0 35px
+            rgba(25, 230, 255, .4);
+
+        animation:
+            checkIn .7s
+            .3s
+            cubic-bezier(.2,.8,.2,1)
+            both;
+
+    }
+
+
+    @keyframes checkIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                scale(.3)
+                rotate(-25deg);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                scale(1)
+                rotate(0);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TITLE
+    ===================================================== */
+
+    h1 {
+
+        font-family: "Orbitron", sans-serif;
+
+        font-size: clamp(
+            25px,
+            5vw,
+            39px
+        );
+
+        line-height: 1.2;
+
+        letter-spacing: -.5px;
+
+        margin-bottom: 14px;
+
+    }
+
+
+    h1 span {
+
+        color: #19e6ff;
+
+        text-shadow:
+            0 0 22px
+            rgba(25, 230, 255, .35);
+
+    }
+
+
+    .subtitle {
+
+        max-width: 520px;
+
+        margin:
+            0
+            auto
+            26px;
+
+        color: #9aa9bc;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       STATUS LABEL
+    ===================================================== */
+
+    .status-label {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding:
+            7px
+            12px;
+
+        margin-bottom: 20px;
+
+        border:
+            1px solid
+            rgba(78, 231, 161, .22);
+
+        border-radius: 999px;
+
+        background:
+            rgba(78, 231, 161, .06);
+
+        color: #4ee7a1;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: 1.4px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .status-dot {
+
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #4ee7a1;
+
+        box-shadow:
+            0 0 10px
+            rgba(78, 231, 161, .8);
+
+    }
+
+
+    /* =====================================================
+       REGISTRATION ID
+    ===================================================== */
+
+    .id-box {
+
+        position: relative;
+
+        padding:
+            18px
+            20px;
+
+        margin:
+            10px
+            auto
+            24px;
+
+        border:
+            1px dashed
+            rgba(25, 230, 255, .42);
+
+        border-radius: 16px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(25, 230, 255, .06),
+                rgba(25, 230, 255, .015)
+            );
+
+    }
+
+
+    .id-label {
+
+        display: block;
+
+        margin-bottom: 7px;
+
+        color: #718198;
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .id {
+
+        display: block;
+
+        color: #19e6ff;
+
+        font-family: "Orbitron", sans-serif;
+
+        font-size: clamp(
+            13px,
+            3vw,
+            17px
+        );
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+
+        word-break: break-word;
+
+        text-shadow:
+            0 0 15px
+            rgba(25, 230, 255, .25);
+
+    }
+
+
+    /* =====================================================
+       EVENT INFO
+    ===================================================== */
+
+    .event-info {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .event-item {
+
+        padding: 12px;
+
+        border:
+            1px solid
+            rgba(255,255,255,.07);
+
+        border-radius: 12px;
+
+        background:
+            rgba(255,255,255,.025);
+
+    }
+
+
+    .event-item strong {
+
+        display: block;
+
+        margin-bottom: 3px;
+
+        color: #ffffff;
+
+        font-size: 12px;
+
+    }
+
+
+    .event-item span {
+
+        color: #728196;
+
+        font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .actions {
+
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+
+    .btn {
+
+        min-width: 170px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        padding:
+            13px
+            18px;
+
+        border:
+            1px solid
+            rgba(25,230,255,.4);
+
+        border-radius: 11px;
+
+        text-decoration: none;
+
+        font-size: 12px;
+
+        font-weight: 800;
+
+        transition:
+            transform .2s ease,
+            box-shadow .2s ease,
+            background .2s ease;
+
+    }
+
+
+    .btn.primary {
+
+        color: #021019;
+
+        background:
+            linear-gradient(
+                135deg,
+                #19e6ff,
+                #0cb9d2
+            );
+
+        box-shadow:
+            0 10px 28px
+            rgba(25,230,255,.18);
+
+    }
+
+
+    .btn.secondary {
+
+        color: #ffffff;
+
+        background:
+            rgba(255,255,255,.04);
+
+        border-color:
+            rgba(255,255,255,.10);
+
+    }
+
+
+    .btn:hover {
+
+        transform:
+            translateY(-3px);
+
+    }
+
+
+    .btn.primary:hover {
+
+        box-shadow:
+            0 14px 35px
+            rgba(25,230,255,.28);
+
+    }
+
+
+    .btn.secondary:hover {
+
+        background:
+            rgba(255,255,255,.08);
+
+        border-color:
+            rgba(255,255,255,.18);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer {
+
+        margin-top: 25px;
+
+        padding-top: 18px;
+
+        border-top:
+            1px solid
+            rgba(255,255,255,.06);
+
+        color: #526176;
+
+        font-size: 9px;
+
+        line-height: 1.7;
+
+        letter-spacing: .4px;
+
+    }
+
+
+    .footer b {
+
+        color: #77879d;
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 560px) {
+
+        body {
+
+            padding:
+                18px 12px;
+
+        }
+
+
+        .card {
+
+            padding:
+                34px
+                18px
+                22px;
+
+            border-radius: 24px;
+
+        }
+
+
+        .corner {
+
+            width: 30px;
+            height: 30px;
+
+        }
+
+
+        .brand {
+
+            gap: 10px;
+
+        }
+
+
+        .logo {
+
+            width: 58px;
+            height: 58px;
+
+        }
+
+
+        .brand-text strong {
+
+            font-size: 11px;
+
+        }
+
+
+        .brand-text small {
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .success-ring {
+
+            width: 90px;
+            height: 90px;
+
+        }
+
+
+        .check {
+
+            width: 61px;
+            height: 61px;
+
+            font-size: 32px;
+
+        }
+
+
+        .event-info {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .btn {
+
+            width: 100%;
+
+        }
+
+
+        .actions {
+
+            flex-direction: column;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
+
+    @media (
+        prefers-reduced-motion: reduce
+    ) {
+
+        *,
+        *::before,
+        *::after {
+
+            animation-duration:
+                .01ms !important;
+
+            animation-iteration-count:
+                1 !important;
+
+            transition-duration:
+                .01ms !important;
+
+        }
+
+    }
+
+</style>
+
+</head><body><!-- Ambient effects -->
+
+<div class="glow one"></div>
+
+<div class="glow two"></div>
+
+
+<!-- Main confirmation -->
+
+<main class="card">
+
+
+    <!-- Decorative corners -->
+
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+
+    <!-- Brand -->
+
+    <div class="brand">
+
+        <img
+            class="logo"
+            src="https://i.ibb.co/60g82LzR/Army-Welfare-Education-Society-logo-1.png"
+            alt="Army Welfare Education Society Logo"
+        >
+
+        <div class="brand-text">
+
+            <small>
+                Army Public School
+            </small>
+
+            <strong>
+                APS TINKERING LAB
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Success -->
+
+    <div class="success-wrapper">
+
+        <div class="success-ring">
+
+            <div class="check">
+                ✓
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Status -->
+
+    <div class="status-label">
+
+        <span class="status-dot"></span>
+
+        Registration Confirmed
+
+    </div>
+
+
+    <!-- Heading -->
+
+    <h1>
+        Registration
+        <span>Successful</span>
+    </h1>
+
+
+    <!-- Welcome message -->
+
+    <p
+        class="subtitle"
+        id="welcome"
+    >
+        Your team has been successfully registered
+        for APS Robotics Championship 2026.
+    </p>
+
+
+    <!-- Registration ID -->
+
+    <div class="id-box">
+
+        <span class="id-label">
+            Your Registration ID
+        </span>
+
+        <strong
+            class="id"
+            id="registrationId"
+        >
+            Registration submitted
+        </strong>
+
+    </div>
+
+
+    <!-- Event information -->
+
+    <div class="event-info">
+
+        <div class="event-item">
+
+            <strong>
+                🤖 Championship
+            </strong>
+
+            <span>
+                APS Robotics Championship 2026
+            </span>
+
+        </div>
+
+
+        <div class="event-item">
+
+            <strong>
+                🏫 Venue
+            </strong>
+
+            <span>
+                APS Lal Bahadur Shastri Marg
+            </span>
+
+        </div>
+
+
+        <div class="event-item">
+
+            <strong>
+                ⚙️ Organized By
+            </strong>
+
+            <span>
+                APS Tinkering Lab
+            </span>
+
+        </div>
+
+
+        <div class="event-item">
+
+            <strong>
+                📍 Location
+            </strong>
+
+            <span>
+                Lucknow, Uttar Pradesh
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Actions -->
+
+    <div class="actions">
+
+        <a
+            class="btn primary"
+            href="index.html"
+        >
+            🏠 Back to Home
+        </a>
+
+
+        <a
+            class="btn secondary"
+            href="registration.html"
+        >
+            ➕ New Registration
+        </a>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        <b>
+            APS ROBOTICS CHAMPIONSHIP 2026
+        </b>
+
+        <br>
+
+        Please keep your Registration ID safe
+        for future communication and verification.
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+    /* =====================================================
+       REGISTRATION DATA
+    ===================================================== */
+
+    const registrationId =
+        sessionStorage.getItem(
+            "apsRegistrationId"
+        );
+
+
+    const registrationName =
+        sessionStorage.getItem(
+            "apsRegistrationName"
+        );
+
+
+    const idElement =
+        document.getElementById(
+            "registrationId"
+        );
+
+
+    const welcomeElement =
+        document.getElementById(
+            "welcome"
+        );
+
+
+    /* =====================================================
+       DISPLAY REGISTRATION ID
+    ===================================================== */
+
+    if (
+        registrationId &&
+        idElement
+    ) {
+
+        idElement.textContent =
+            registrationId;
+
+    }
+
+
+    /* =====================================================
+       DISPLAY NAME
+    ===================================================== */
+
+    if (
+        registrationName &&
+        welcomeElement
+    ) {
+
+        const safeName =
+            registrationName
+                .trim();
+
+
+        if (safeName) {
+
+            welcomeElement.textContent =
+                `Thank you, ${safeName}. Your registration has been submitted and is currently Pending Approval. Our team will review it and contact you soon.`;
+
+        }
+
+    }
+
+
+    // Keep the registration ID in session storage while this tab is open.
+    // This lets the user refresh the confirmation page without losing it.
+
+</script>
+
+</body></html>

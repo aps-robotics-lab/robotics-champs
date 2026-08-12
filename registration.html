@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020711"><meta name="description" content="Registration for APS Robotics Championship 2026">
+<title>Registration | APS Robotics Championship 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="registration.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>(function(){emailjs.init({publicKey:"GnxniZ70ndujyjDpe"});})();</script>
+</head>
+<body>
+<div class="page-background"><div class="grid-overlay"></div><div class="glow glow-one"></div><div class="glow glow-two"></div></div>
+<header class="registration-header">
+<a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+<div class="header-brand"><img src="https://i.ibb.co/60g82LzR/Army-Welfare-Education-Society-logo-1.png" alt="APS Logo"><div><span>ARMY PUBLIC SCHOOL LAL BAHADUR SHASTRI MARG</span><strong>ROBOTICS CHAMPIONSHIP 2026</strong></div></div>
+</header>
+<main class="registration-main"><div class="registration-container">
+<section class="registration-hero"><span class="hero-badge"><i class="fa-solid fa-robot"></i> REGISTRATION OPEN</span><h1>APS ROBOTICS <span>CHAMPIONSHIP 2026</span></h1><p>Choose your team size, enter participant details, select your events and submit one complete registration.</p></section>
+
+<form id="registrationForm" class="registration-form" novalidate>
+<section class="form-section" id="teamSection">
+ <div class="section-heading"><div class="section-number">01</div><div><span>TEAM CONFIGURATION</span><h2>How are you participating?</h2><p>Solo participants do not need to enter any team-member details. Teams may have up to 5 members.</p></div></div>
+ <div class="team-size-grid">
+  <label class="team-size-card"><input type="radio" name="TeamSize" value="1" checked><span class="team-size-content"><i class="fa-solid fa-user"></i><strong>Solo</strong><small>1 participant</small></span></label>
+  <label class="team-size-card"><input type="radio" name="TeamSize" value="2"><span class="team-size-content"><i class="fa-solid fa-user-group"></i><strong>Team of 2</strong><small>2 participants</small></span></label>
+  <label class="team-size-card"><input type="radio" name="TeamSize" value="3"><span class="team-size-content"><i class="fa-solid fa-people-group"></i><strong>Team of 3</strong><small>3 participants</small></span></label>
+  <label class="team-size-card"><input type="radio" name="TeamSize" value="4"><span class="team-size-content"><i class="fa-solid fa-people-group"></i><strong>Team of 4</strong><small>4 participants</small></span></label>
+  <label class="team-size-card"><input type="radio" name="TeamSize" value="5"><span class="team-size-content"><i class="fa-solid fa-people-group"></i><strong>Team of 5</strong><small>Maximum</small></span></label>
+ </div>
+ <input type="hidden" id="participationType" name="ParticipationType" value="Solo">
+</section>
+
+<section class="form-section" id="leaderSection">
+ <div class="section-heading"><div class="section-number">02</div><div><span>LEAD PARTICIPANT</span><h2>Participant Information</h2></div></div>
+ <div class="member-card leader-card"><div class="field-grid">
+  <div class="field full-field"><label for="studentName">Full Name <span>*</span></label><input type="text" id="studentName" required autocomplete="name"></div>
+  <div class="field"><label for="studentClass">Class <span>*</span></label><select id="studentClass" required><option value="">Select</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></div>
+  <div class="field"><label for="studentSection">Section <span>*</span></label><input type="text" id="studentSection" maxlength="5" required></div>
+ </div></div>
+</section>
+
+<section class="form-section" id="membersSection" hidden>
+ <div class="section-heading"><div class="section-number">03</div><div><span>TEAM MEMBERS</span><h2>Additional Participants</h2><p id="memberInstruction">Add the remaining members of your team.</p></div></div>
+ <div id="memberCards"></div>
+</section>
+
+<section class="form-section" id="contactSection">
+ <div class="section-heading"><div class="section-number">04</div><div><span>CONTACT DETAILS</span><h2>Communication Information</h2></div></div>
+ <div class="field-grid">
+  <div class="field"><label for="mobileNumber">Mobile Number <span>*</span></label><input type="tel" id="mobileNumber" maxlength="10" inputmode="numeric" required placeholder="10-digit mobile number"></div>
+  <div class="field"><label for="emailAddress">Email Address <span>*</span></label><input type="email" id="emailAddress" required autocomplete="email"></div>
+  <div class="field full-field"><label for="teamName">Team Name <span class="optional">Optional</span></label><input type="text" id="teamName" maxlength="80" placeholder="Give your team a name"></div>
+ </div>
+</section>
+
+<section class="form-section" id="eventsSection">
+ <div class="section-heading"><div class="section-number">05</div><div><span>CHAMPIONSHIP EVENTS</span><h2>Select Event(s)</h2><p>You may select more than one event.</p></div></div>
+ <div id="eventSelection" class="event-selection">
+  <label class="event-option"><input type="checkbox" name="Events" value="Robo Race"><span class="event-option-card"><span class="event-icon"><i class="fa-solid fa-flag-checkered"></i></span><span class="event-text"><strong>Robo Race</strong><small>Speed &amp; precision</small></span></span></label>
+  <label class="event-option"><input type="checkbox" name="Events" value="Robo War"><span class="event-option-card"><span class="event-icon"><i class="fa-solid fa-shield-halved"></i></span><span class="event-text"><strong>Robo War</strong><small>Strategy &amp; controlled combat</small></span></span></label>
+  <label class="event-option"><input type="checkbox" name="Events" value="Robo Tug of War"><span class="event-option-card"><span class="event-icon"><i class="fa-solid fa-handshake"></i></span><span class="event-text"><strong>Robo Tug of War</strong><small>Traction &amp; strength</small></span></span></label>
+  <label class="event-option"><input type="checkbox" name="Events" value="Robo Soccer"><span class="event-option-card"><span class="event-icon"><i class="fa-solid fa-futbol"></i></span><span class="event-text"><strong>Robo Soccer</strong><small>Control &amp; teamwork</small></span></span></label>
+ </div>
+ <div id="eventError" class="field-error"></div>
+ <div class="field" style="margin-top:20px"><label for="remarks">Remarks <span class="optional">Optional</span></label><textarea id="remarks" rows="4" maxlength="500" placeholder="Any relevant information for the organising team"></textarea></div>
+ <label class="agreement"><input type="checkbox" id="agreeTerms" required><span class="custom-checkbox"><i class="fa-solid fa-check"></i></span><span>I confirm that the information is accurate and I agree to follow the championship rules and organiser instructions.</span></label>
+ <div id="formMessage" class="form-message" role="alert"></div>
+ <button type="submit" id="submitBtn" class="btn primary submit-registration">Submit Registration <i class="fa-solid fa-arrow-right"></i></button>
+</section>
+</form>
+</div></main>
+
+<div id="successOverlay" class="success-overlay hidden"><div class="success-box"><div class="success-icon"><i class="fa-solid fa-check"></i></div><h2>Registration Successful</h2><p>Your registration has been received and is <strong>Pending Approval</strong>.</p><div class="approval-note"><i class="fa-solid fa-clock"></i><span>Our team will review your registration and contact you soon.</span></div><div class="registration-id-box"><span>REGISTRATION ID</span><strong id="successRegistrationId"></strong></div><p class="small-note">Save this ID. You may use it later when contacting the Help Center.</p><button id="continueBtn" class="btn primary">Continue <i class="fa-solid fa-arrow-right"></i></button></div></div>
+<script type="module" src="registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+
+<title>Admin Control Center | APS Robotics Championship 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+</div>
+
+<div id="loadingScreen" class="loading-screen">
+    <div class="loader-ring"></div>
+    <h2>AUTHENTICATING</h2>
+    <p>Connecting to APS control center...</p>
+</div>
+
+<div class="app hidden" id="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <img
+                src="https://i.ibb.co/60g82LzR/Army-Welfare-Education-Society-logo-1.png"
+                alt="APS Logo">
+
+            <div>
+                <strong>APS ROBOTICS</strong>
+                <span>CHAMPIONSHIP 2026</span>
+            </div>
+        </div>
+
+        <div class="admin-profile">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="profile-info">
+                <strong id="adminName">Administrator</strong>
+                <small id="adminEmail">Loading...</small>
+            </div>
+
+            <span class="online-dot"></span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a>
+            <a href="#registrations" class="nav-link"><i class="fa-solid fa-users"></i><span>Registrations</span></a>
+            <a href="#events" class="nav-link"><i class="fa-solid fa-robot"></i><span>Events</span></a>
+            <a href="#websiteContent" class="nav-link"><i class="fa-solid fa-pen-to-square"></i><span>Website Editor</span></a>
+            
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="side-action">
+                <i class="fa-solid fa-globe"></i>
+                Website
+            </a>
+
+            <a href="rules.html" class="side-action">
+                <i class="fa-solid fa-shield-halved"></i>
+                Rules
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button
+    id="menuBtn"
+    class="menu-btn"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+>
+    <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="top-title">
+                <span>CONTROL CENTER</span>
+                <h1>Admin Dashboard</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="firebase-status">
+                    <span></span>
+                    Firebase Connected
+                </div>
+
+                <button id="refreshBtn" class="icon-btn" title="Refresh">
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <section id="dashboard" class="page-section">
+
+                <div class="hero">
+
+                    <div>
+                        <span class="hero-badge">
+                            <i class="fa-solid fa-lock"></i>
+                            ADMIN ONLY
+                        </span>
+
+                        <h2>
+                            APS Robotics
+                            <span>Command Center</span>
+                        </h2>
+
+                        <p>
+                            Monitor and manage APS Robotics Championship
+                            2026 registrations in real time.
+                        </p>
+                    </div>
+
+                    <div class="hero-robot">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div>
+                            <small>TOTAL REGISTRATIONS</small>
+                            <strong id="totalRegistrations">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <small>SOLO</small>
+                            <strong id="soloCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+
+                        <div>
+                            <small>TEAMS</small>
+                            <strong id="teamCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <div>
+                            <small>EVENT ENTRIES</small>
+                            <strong id="eventEntries">0</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="events" class="section-header">
+                    <div>
+                        <span>CHAMPIONSHIP ANALYTICS</span>
+                        <h2>Event Participation</h2>
+                    </div>
+                </div>
+
+                <div class="event-stats">
+
+                    <div class="event-stat">
+                        <div class="event-stat-icon race">
+                            <i class="fa-solid fa-flag-checkered"></i>
+                        </div>
+                        <div>
+                            <span>Robo Race</span>
+                            <strong id="raceCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="event-stat">
+                        <div class="event-stat-icon war">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span>Robo War</span>
+                            <strong id="warCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="event-stat">
+                        <div class="event-stat-icon tug">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <div>
+                            <span>Robo Tug of War</span>
+                            <strong id="tugCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="event-stat">
+                        <div class="event-stat-icon soccer">
+                            <i class="fa-solid fa-futbol"></i>
+                        </div>
+                        <div>
+                            <span>Robo Soccer</span>
+                            <strong id="soccerCount">0</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="registrations" class="registrations-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <span>DATABASE MANAGEMENT</span>
+                        <h2>Registrations</h2>
+                    </div>
+
+                    <button id="exportBtn" class="export-btn">
+                        <i class="fa-solid fa-file-csv"></i>
+                        Export CSV
+                    </button>
+
+                </div>
+
+                <div id="status" class="status"></div>
+
+                <div class="toolbar">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            id="search"
+                            type="search"
+                            placeholder="Search ID, name, team, email, event...">
+
+                        <button id="clearSearch" title="Clear">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="solo">Solo</option>
+                        <option value="team">Teams</option>
+                    </select>
+
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="pending approval">Pending Approval</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+
+                    <select id="eventFilter">
+                        <option value="all">All Events</option>
+                        <option value="Robo Race">Robo Race</option>
+                        <option value="Robo War">Robo War</option>
+                        <option value="Robo Tug of War">Robo Tug of War</option>
+                        <option value="Robo Soccer">Robo Soccer</option>
+                    </select>
+
+                </div>
+
+                <div id="mobileRegistrations" class="mobile-registrations"></div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Registration</th>
+                                <th>Leader</th>
+                                <th>Team</th>
+                                <th>Type</th>
+                                <th>Members</th>
+                                <th>Contact</th>
+                                <th>Events</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="registrationBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section id="agentManagement" class="page-section hidden">
+                <div class="section-header"><div><span>ACCESS CONTROL</span><h2>Multi-Agent Security</h2></div></div>
+                <div class="message-editor"><p style="line-height:1.7;opacity:.8">Support agents are managed in the Help Firebase project's <code>agents</code> collection. Only active Firebase-authenticated agents can access support tickets. This keeps the registration database and Help Center authorization separated.</p></div>
+            </section>
+
+            <section id="websiteContent" class="page-section hidden">
+                <div class="section-header">
+                    <div><span>CONTENT MANAGEMENT</span><h2>Edit Messages</h2></div>
+                    <button id="saveContentBtn" class="export-btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                </div>
+                <div id="contentStatus" class="status"></div>
+                <div class="message-editor">
+                    <label class="message-selector">Write a message for
+                        <select id="messageTarget">
+                            <option value="principal">Principal — Sadhna Devi</option>
+                            <option value="mentor">Mentor — Akansha Rani</option>
+                            <option value="coordinator">Coordinator — Championship Coordination Team</option>
+                            <option value="team">Team — APS Robotics Championship</option>
+                        </select>
+                    </label>
+                    <div class="message-panel" data-message-panel="principal">
+                        <label>Principal's Message<textarea id="editPrincipalText" rows="5"></textarea></label><label>Principal's Name<input id="editPrincipalName"></label>
+                    </div>
+                    <div class="message-panel hidden" data-message-panel="mentor">
+                        <label>Mentor's Message<textarea id="editMentorText" rows="5"></textarea></label><label>Mentor's Name<input id="editMentorName"></label>
+                    </div>
+                    <div class="message-panel hidden" data-message-panel="coordinator">
+                        <label>Coordinator's Message<textarea id="editCoordText" rows="5"></textarea></label><label>Coordinator's Name<input id="editCoordName"></label>
+                    </div>
+                    <div class="message-panel hidden" data-message-panel="team">
+                        <label>APS Team's Message<textarea id="editTeamText" rows="5"></textarea></label><label>Team Name<input id="editTeamName"></label>
+                    </div>
+                    <div class="leadership-editor" style="margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)">
+                        <h3 style="margin-bottom:10px">Leadership Photos</h3>
+                        <label>Principal Photo URL<input id="editPrincipalPhoto" placeholder="https://..."></label>
+                        <label>Mentor Photo URL<input id="editMentorPhoto" placeholder="https://..."></label>
+                        <label>Coordinator Photo URL<input id="editCoordinatorPhoto" placeholder="https://..."></label>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="detailOverlay" class="modal-overlay hidden">
+
+    <div class="detail-modal">
+
+        <button class="modal-close" id="closeDetail">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="detail-header">
+
+            <div class="detail-icon">
+                <i class="fa-solid fa-id-card"></i>
+            </div>
+
+            <div>
+                <span>REGISTRATION RECORD</span>
+                <h2 id="detailId">APS-RBC-2026-0001</h2>
+            </div>
+
+        </div>
+
+        <div id="detailContent"></div>
+
+    </div>
+
+</div>
+
+<div id="editOverlay" class="modal-overlay hidden">
+
+    <div class="edit-modal">
+
+        <button class="modal-close" id="closeEdit">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="detail-header">
+
+            <div class="detail-icon">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div>
+                <span>ADMIN EDIT</span>
+                <h2>Edit Registration</h2>
+            </div>
+
+        </div>
+
+        <form id="editForm">
+
+            <input type="hidden" id="editKey">
+
+            <div class="form-grid">
+
+                <label>
+                    Leader Name
+                    <input id="editStudentName" required>
+                </label>
+
+                <label>
+                    Class
+                    <select id="editStudentClass" required>
+                        <option value="">Select Class</option>
+                        <option>VI</option>
+                        <option>VII</option>
+                        <option>VIII</option>
+                        <option>IX</option>
+                        <option>X</option>
+                        <option>XI</option>
+                        <option>XII</option>
+                    </select>
+                </label>
+
+                <label>
+                    Section
+                    <input id="editStudentSection" required>
+                </label>
+
+                <label>
+                    Mobile
+                    <input id="editMobileNumber" maxlength="10">
+                </label>
+
+                <label>
+                    Email
+                    <input id="editEmailAddress" type="email">
+                </label>
+
+                <label>
+                    Team Name
+                    <input id="editTeamName">
+                </label>
+
+            </div>
+
+            <h3 class="form-title">Team Members</h3>
+
+            <div id="editMembers" class="edit-members"></div>
+
+            <label class="remarks-field">
+                Remarks
+                <textarea id="editRemarks" rows="4"></textarea>
+            </label>
+
+            <div id="editMessage" class="edit-message"></div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="cancel-btn">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="confirmOverlay" class="modal-overlay hidden">
+
+    <div class="confirm-modal">
+
+        <div class="confirm-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+
+        <h2>Delete Registration?</h2>
+
+        <p id="confirmMessage">
+            This will permanently remove this registration
+            from the database. This action cannot be undone.
+        </p>
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                id="cancelDelete"
+                class="cancel-btn">
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteBtn"
+                class="delete-confirm-btn">
+                <i class="fa-solid fa-trash"></i>
+                Delete Permanently
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastText"></span>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>

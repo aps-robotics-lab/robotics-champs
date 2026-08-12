@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="theme-color"
+    content="#020711">
+
+<meta
+    name="description"
+    content="APS Robotics Championship 2026 Support Ticket Confirmation">
+
+<title>
+    Support Request Submitted | APS Robotics Championship 2026
+</title>
+
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --bg: #020711;
+
+    --blue: #318cff;
+
+    --cyan: #32e7ff;
+
+    --green: #38e6a2;
+
+    --purple: #7c5cff;
+
+    --white: #f7fbff;
+
+    --muted: #91a4bd;
+
+    --border:
+        rgba(91, 177, 255, .18);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    min-height: 100%;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 18px;
+
+    overflow-x: hidden;
+
+    color: var(--white);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(49,140,255,.20),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(50,231,255,.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(124,92,255,.06),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #01040a 0%,
+            #031021 50%,
+            #020711 100%
+        );
+
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .20;
+
+    background-image:
+
+        linear-gradient(
+            rgba(64,223,255,.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(64,223,255,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   AMBIENT LIGHTS
+========================================================= */
+
+.orb {
+
+    position: fixed;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(70px);
+
+    opacity: .12;
+
+    animation:
+        floatOrb 8s ease-in-out infinite;
+
+}
+
+
+.orb.one {
+
+    top: -100px;
+
+    left: -80px;
+
+    background:
+        var(--blue);
+
+}
+
+
+.orb.two {
+
+    right: -100px;
+
+    bottom: -100px;
+
+    background:
+        var(--cyan);
+
+    animation-delay:
+        -4s;
+
+}
+
+
+@keyframes floatOrb {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(25px,-20px);
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.card {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(700px, 100%);
+
+    padding:
+        52px 34px 38px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(9,27,49,.90),
+            rgba(4,14,28,.88)
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+
+        0 35px 100px
+        rgba(0,0,0,.55),
+
+        0 0 80px
+        rgba(49,140,255,.07);
+
+    overflow: hidden;
+
+    animation:
+        cardIn .7s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+@keyframes cardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   CARD TOP LINE
+========================================================= */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 8%;
+
+    right: 8%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            var(--cyan),
+            var(--green),
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(50,231,255,.7);
+
+}
+
+
+/* =========================================================
+   CORNER DECORATIONS
+========================================================= */
+
+.corner {
+
+    position: absolute;
+
+    width: 45px;
+
+    height: 45px;
+
+    opacity: .45;
+
+}
+
+
+.corner::before,
+.corner::after {
+
+    content: "";
+
+    position: absolute;
+
+    background:
+        var(--cyan);
+
+}
+
+
+.corner::before {
+
+    width: 100%;
+
+    height: 1px;
+
+}
+
+
+.corner::after {
+
+    width: 1px;
+
+    height: 100%;
+
+}
+
+
+.corner.tl {
+
+    top: 18px;
+
+    left: 18px;
+
+}
+
+
+.corner.tr {
+
+    top: 18px;
+
+    right: 18px;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+.corner.bl {
+
+    bottom: 18px;
+
+    left: 18px;
+
+    transform:
+        rotate(-90deg);
+
+}
+
+
+.corner.br {
+
+    bottom: 18px;
+
+    right: 18px;
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.system-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid
+        rgba(56,230,162,.18);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(56,230,162,.06);
+
+    color:
+        var(--green);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 12px
+        var(--green);
+
+    animation:
+        pulse 1.7s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        opacity: .4;
+
+        transform:
+            scale(.75);
+
+    }
+
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.icon {
+
+    position: relative;
+
+    width: 105px;
+
+    height: 105px;
+
+    margin:
+        0 auto 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color:
+        #02120e;
+
+    font-size:
+        45px;
+
+    font-weight:
+        800;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--cyan)
+        );
+
+    box-shadow:
+
+        0 0 0 8px
+        rgba(56,230,162,.04),
+
+        0 0 0 16px
+        rgba(56,230,162,.025),
+
+        0 0 55px
+        rgba(56,230,162,.30);
+
+    animation:
+        successPop .8s
+        cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -9px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(56,230,162,.25);
+
+    animation:
+        ring 2.5s
+        ease-out infinite;
+
+}
+
+
+@keyframes successPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.4)
+            rotate(-15deg);
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+@keyframes ring {
+
+    0% {
+
+        transform:
+            scale(.85);
+
+        opacity:
+            .8;
+
+    }
+
+    100% {
+
+        transform:
+            scale(1.35);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+    display: inline-block;
+
+    padding:
+        8px 14px;
+
+    border:
+        1px solid
+        rgba(50,231,255,.18);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(50,231,255,.05);
+
+    color:
+        var(--cyan);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.8px;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+h1 {
+
+    margin:
+        20px 0 12px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            28px,
+            6vw,
+            46px
+        );
+
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -.5px;
+
+}
+
+
+h1 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 30px
+        rgba(50,231,255,.25);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+
+    max-width:
+        540px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.85;
+
+}
+
+
+/* =========================================================
+   TICKET BOX
+========================================================= */
+
+.ticket-box {
+
+    position: relative;
+
+    margin-top:
+        32px;
+
+    padding:
+        24px 20px;
+
+    border:
+        1px solid
+        rgba(50,231,255,.18);
+
+    border-radius:
+        18px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(50,231,255,.055),
+            rgba(49,140,255,.025)
+        );
+
+    overflow: hidden;
+
+}
+
+
+.ticket-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 3px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            var(--blue),
+            var(--cyan),
+            var(--green)
+        );
+
+}
+
+
+.ticket-label {
+
+    display: block;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--muted);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.ticket-id {
+
+    display: block;
+
+    color:
+        var(--cyan);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            17px,
+            4vw,
+            27px
+        );
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+    word-break:
+        break-all;
+
+    text-shadow:
+        0 0 25px
+        rgba(50,231,255,.18);
+
+}
+
+
+/* =========================================================
+   WARNING
+========================================================= */
+
+.warning {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top:
+        18px;
+
+    color:
+        #ffd98a;
+
+    font-size:
+        11px;
+
+}
+
+
+.warning-icon {
+
+    font-size:
+        14px;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+
+    display: flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        32px;
+
+}
+
+
+button,
+a {
+
+    min-height:
+        46px;
+
+    display: inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        11px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+
+}
+
+
+button:hover,
+a:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.primary {
+
+    border:
+        1px solid
+        transparent;
+
+    color:
+        #021019;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--blue),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(50,231,255,.12);
+
+}
+
+
+.primary:hover {
+
+    box-shadow:
+        0 12px 35px
+        rgba(50,231,255,.22);
+
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.secondary {
+
+    border:
+        1px solid
+        rgba(126,181,255,.20);
+
+    color:
+        var(--white);
+
+    background:
+        rgba(255,255,255,.045);
+
+}
+
+
+.secondary:hover {
+
+    border-color:
+        rgba(50,231,255,.35);
+
+    background:
+        rgba(50,231,255,.07);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    margin-top:
+        30px;
+
+    color:
+        rgba(145,164,189,.65);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .7px;
+
+}
+
+
+.footer strong {
+
+    color:
+        rgba(50,231,255,.7);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding:
+            18px 12px;
+
+    }
+
+
+    .card {
+
+        padding:
+            42px 20px 28px;
+
+        border-radius:
+            24px;
+
+    }
+
+
+    .icon {
+
+        width:
+            88px;
+
+        height:
+            88px;
+
+        font-size:
+            38px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            27px;
+
+    }
+
+
+    .description {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .ticket-box {
+
+        padding:
+            20px 14px;
+
+    }
+
+
+    .actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .actions a,
+    .actions button {
+
+        width:
+            100%;
+
+    }
+
+
+    .corner {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- Ambient background -->
+
+<div class="orb one"></div>
+
+<div class="orb two"></div>
+
+
+<!-- Main confirmation card -->
+
+<main class="card">
+
+
+    <!-- Decorative corners -->
+
+    <div class="corner tl"></div>
+
+    <div class="corner tr"></div>
+
+    <div class="corner bl"></div>
+
+    <div class="corner br"></div>
+
+
+    <!-- System status -->
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        SUPPORT SYSTEM ONLINE
+
+    </div>
+
+
+    <!-- Success -->
+
+    <div class="icon">
+
+        ✓
+
+    </div>
+
+
+    <div class="badge">
+
+        SUPPORT TICKET CREATED
+
+    </div>
+
+
+    <h1>
+
+        Request Received
+
+        <span>Successfully</span>
+
+    </h1>
+
+
+    <p class="description">
+
+        Your support request has been securely submitted to the APS Robotics Championship support team. Our team will review your request and contact you soon.
+
+    </p>
+
+
+    <!-- Ticket -->
+
+    <div class="ticket-box">
+
+        <span class="ticket-label">
+
+            YOUR HELP REFERENCE ID
+
+        </span>
+
+
+        <strong
+            class="ticket-id"
+            id="ticketId"
+        >
+
+            Loading...
+
+        </strong>
+
+    </div>
+
+
+    <!-- Warning -->
+
+    <div class="warning">
+
+        <span class="warning-icon">
+            ⚠
+        </span>
+
+        Save this APS-XXXXX reference ID to check your help progress.
+
+    </div>
+
+
+    <!-- Buttons -->
+
+    <div class="actions">
+
+
+        <button
+            type="button"
+            class="secondary"
+            id="copyBtn"
+        >
+
+            📋
+
+            Copy Ticket ID
+
+        </button>
+
+
+        <a
+            href="help.html"
+            class="primary"
+        >
+
+            ←
+
+            Track Help Progress
+
+        </a>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="footer">
+
+        APS ROBOTICS CHAMPIONSHIP 2026
+
+        <strong> • SUPPORT SYSTEM</strong>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   GET TICKET ID
+========================================================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const ticketId =
+    params.get("reference") ||
+    sessionStorage.getItem("apsHelpReferenceId") ||
+    "Not available";
+
+
+/* =========================================================
+   DISPLAY TICKET
+========================================================= */
+
+const ticketElement =
+    document.getElementById(
+        "ticketId"
+    );
+
+
+if (ticketElement) {
+
+    ticketElement.textContent =
+        ticketId;
+
+}
+
+
+/* =========================================================
+   COPY TICKET
+========================================================= */
+
+const copyBtn =
+    document.getElementById(
+        "copyBtn"
+    );
+
+
+copyBtn?.addEventListener(
+    "click",
+    async function () {
+
+        if (
+            !ticketId ||
+            ticketId === "Not available"
+        ) {
+
+            return;
+
+        }
+
+
+        try {
+
+            await navigator.clipboard.writeText(
+                ticketId
+            );
+
+
+            this.innerHTML =
+                "✓ Copied Successfully";
+
+
+            setTimeout(
+                () => {
+
+                    this.innerHTML =
+                        "📋 Copy Ticket ID";
+
+                },
+                1800
+            );
+
+        }
+
+        catch (error) {
+
+            /* Fallback for browsers where
+               clipboard permission is unavailable */
+
+            const textarea =
+                document.createElement(
+                    "textarea"
+                );
+
+
+            textarea.value =
+                ticketId;
+
+
+            textarea.style.position =
+                "fixed";
+
+            textarea.style.opacity =
+                "0";
+
+
+            document.body.appendChild(
+                textarea
+            );
+
+
+            textarea.select();
+
+
+            try {
+
+                document.execCommand(
+                    "copy"
+                );
+
+
+                this.innerHTML =
+                    "✓ Copied Successfully";
+
+
+                setTimeout(
+                    () => {
+
+                        this.innerHTML =
+                            "📋 Copy Ticket ID";
+
+                    },
+                    1800
+                );
+
+            }
+
+            catch (fallbackError) {
+
+                alert(
+                    "Your Ticket ID is:\n\n" +
+                    ticketId
+                );
+
+            }
+
+
+            textarea.remove();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

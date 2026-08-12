@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020711"
+    >
+
+    <title>
+        Agent Login | APS Robotics Championship 2026
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            font-family: "Poppins", sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #10244b 0%,
+                    #071329 35%,
+                    #020711 75%
+                );
+
+        }
+
+        .login-wrapper {
+
+            width: 100%;
+            max-width: 460px;
+
+        }
+
+        .login-card {
+
+            padding: 34px;
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            border-radius: 24px;
+
+            background:
+                rgba(7,15,31,.88);
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.45);
+
+            backdrop-filter: blur(20px);
+
+        }
+
+        .brand {
+
+            text-align: center;
+
+            margin-bottom: 28px;
+
+        }
+
+        .brand-icon {
+
+            width: 72px;
+            height: 72px;
+
+            margin: 0 auto 16px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00d4ff,
+                    #635bff
+                );
+
+            font-size: 30px;
+
+            box-shadow:
+                0 15px 35px rgba(0,212,255,.20);
+
+        }
+
+        .brand h1 {
+
+            font-family: "Orbitron", sans-serif;
+
+            font-size: 22px;
+
+            line-height: 1.4;
+
+            margin-bottom: 7px;
+
+        }
+
+        .brand p {
+
+            color: #91a0ba;
+
+            font-size: 13px;
+
+        }
+
+        .field {
+
+            margin-bottom: 18px;
+
+        }
+
+        .field label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+
+            color: #b9c5da;
+
+        }
+
+        .input-wrap {
+
+            position: relative;
+
+        }
+
+        .input-wrap > i {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #6e7f9e;
+
+        }
+
+        .input-wrap input {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding:
+                0 48px 0 45px;
+
+            border:
+                1px solid rgba(255,255,255,.10);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,.045);
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+        }
+
+        .input-wrap input:focus {
+
+            border-color: #00d4ff;
+
+            box-shadow:
+                0 0 0 3px rgba(0,212,255,.10);
+
+        }
+
+        .input-wrap input::placeholder {
+
+            color: #66748d;
+
+        }
+
+        #togglePassword {
+
+            position: absolute;
+
+            right: 12px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 35px;
+            height: 35px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #8c9bb4;
+
+            cursor: pointer;
+
+        }
+
+        .login-btn {
+
+            width: 100%;
+
+            height: 54px;
+
+            margin-top: 6px;
+
+            border: 0;
+
+            border-radius: 14px;
+
+            cursor: pointer;
+
+            color: #ffffff;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00bfff,
+                    #635bff
+                );
+
+            box-shadow:
+                0 12px 30px rgba(0,180,255,.18);
+
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+
+        }
+
+        .login-btn:hover {
+
+            transform: translateY(-1px);
+
+        }
+
+        .login-btn:disabled {
+
+            cursor: not-allowed;
+
+            opacity: .65;
+
+            transform: none;
+
+        }
+
+        .forgot {
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 16px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #55d9ff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+        }
+
+        .forgot:hover {
+
+            text-decoration: underline;
+
+        }
+
+        .login-message {
+
+            min-height: 22px;
+
+            margin-top: 16px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+        .login-message.error {
+
+            color: #ff7180;
+
+        }
+
+        .login-message.success {
+
+            color: #45e5a2;
+
+        }
+
+        .security-note {
+
+            margin-top: 24px;
+
+            padding: 13px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            color: #7787a1;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            text-align: center;
+
+        }
+
+        .hidden {
+
+            display: none !important;
+
+        }
+
+        #loadingScreen {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #020711;
+
+            z-index: 100;
+
+        }
+
+        .loader {
+
+            width: 42px;
+            height: 42px;
+
+            border:
+                3px solid rgba(255,255,255,.10);
+
+            border-top-color: #00d4ff;
+
+            border-radius: 50%;
+
+            animation:
+                spin .8s linear infinite;
+
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .login-card {
+
+                padding: 25px 20px;
+
+                border-radius: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div id="loadingScreen">
+
+    <div class="loader"></div>
+
+</div>
+
+
+<main
+    id="loginMain"
+    class="login-wrapper hidden"
+>
+
+    <section class="login-card">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <h1>
+                Agent Help Center
+            </h1>
+
+            <p>
+                APS Robotics Championship 2026
+            </p>
+
+        </div>
+
+
+        <form
+            id="loginForm"
+            novalidate
+        >
+
+            <div class="field">
+
+                <label for="loginEmail">
+                    Agent Email
+                </label>
+
+                <div class="input-wrap">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        id="loginEmail"
+                        type="email"
+                        autocomplete="username"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <div class="input-wrap">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        id="loginPassword"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        id="togglePassword"
+                        type="button"
+                        title="Show password"
+                    >
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="loginBtn"
+                class="login-btn"
+                type="submit"
+            >
+
+                <span id="loginBtnText">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    &nbsp; Sign In
+                </span>
+
+                <span
+                    id="loginBtnLoading"
+                    class="hidden"
+                >
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    &nbsp; Signing in...
+                </span>
+
+            </button>
+
+
+            <button
+                id="forgotPasswordBtn"
+                class="forgot"
+                type="button"
+            >
+
+                Forgot password?
+
+            </button>
+
+
+            <div
+                id="loginMessage"
+                class="login-message"
+            ></div>
+
+        </form>
+
+
+        <div class="security-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure agent access.
+            Only authorized Firebase accounts can access
+            support tickets.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    type="module"
+    src="./agent-login.js"
+></script>
+
+
+</body>
+
+</html>

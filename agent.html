@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020711"
+    >
+
+    <title>
+        Agent Dashboard | APS Robotics Championship 2026
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                "Poppins",
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #10244b,
+                    #030814 55%,
+                    #02040a
+                );
+
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+
+            font: inherit;
+
+        }
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+        .hidden {
+
+            display: none !important;
+
+        }
+
+
+        /* =================================================
+           HEADER
+        ================================================= */
+
+        .topbar {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 20;
+
+            min-height: 72px;
+
+            padding:
+                12px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+
+            background:
+                rgba(2,7,17,.90);
+
+            backdrop-filter:
+                blur(18px);
+
+        }
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+        .brand-icon {
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00c8ff,
+                    #635bff
+                );
+
+        }
+
+        .brand h1 {
+
+            font-family:
+                "Orbitron",
+                sans-serif;
+
+            font-size: 16px;
+
+        }
+
+        .brand p {
+
+            margin-top: 2px;
+
+            color: #8291aa;
+
+            font-size: 11px;
+
+        }
+
+        .logout-btn {
+
+            padding:
+                10px 15px;
+
+            border:
+                1px solid rgba(255,255,255,.10);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            color: #ffffff;
+
+        }
+
+        .logout-btn:hover {
+
+            background:
+                rgba(255,255,255,.09);
+
+        }
+
+
+        /* =================================================
+           MAIN
+        ================================================= */
+
+        .container {
+
+            width: min(
+                1400px,
+                calc(100% - 32px)
+            );
+
+            margin:
+                28px auto 50px;
+
+        }
+
+        .page-heading {
+
+            margin-bottom: 24px;
+
+        }
+
+        .page-heading h2 {
+
+            font-family:
+                "Orbitron",
+                sans-serif;
+
+            font-size: 24px;
+
+            margin-bottom: 6px;
+
+        }
+
+        .page-heading p {
+
+            color: #8291aa;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =================================================
+           STATUS
+        ================================================= */
+
+        .status-message {
+
+            min-height: 20px;
+
+            margin-bottom: 18px;
+
+            padding: 10px 14px;
+
+            border-radius: 10px;
+
+            color: #9daac0;
+
+            background:
+                rgba(255,255,255,.035);
+
+            font-size: 12px;
+
+        }
+
+        .status-message.success {
+
+            color: #53e6a8;
+
+            background:
+                rgba(83,230,168,.07);
+
+        }
+
+        .status-message.error {
+
+            color: #ff7180;
+
+            background:
+                rgba(255,113,128,.07);
+
+        }
+
+
+        /* =================================================
+           STATS
+        ================================================= */
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-bottom: 22px;
+
+        }
+
+        .stat-card {
+
+            padding: 20px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,.035);
+
+        }
+
+        .stat-card i {
+
+            color: #4bdcff;
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .stat-card strong {
+
+            display: block;
+
+            font-size: 28px;
+
+            line-height: 1;
+
+        }
+
+        .stat-card span {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color: #7f8da5;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =================================================
+           CONTROLS
+        ================================================= */
+
+        .controls {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .search {
+
+            flex: 1;
+
+            position: relative;
+
+        }
+
+        .search i {
+
+            position: absolute;
+
+            left: 14px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #6d7b94;
+
+        }
+
+        .search input {
+
+            width: 100%;
+
+            height: 46px;
+
+            padding:
+                0 14px 0 42px;
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,.045);
+
+            color: white;
+
+        }
+
+        .search input:focus {
+
+            border-color: #00c8ff;
+
+        }
+
+        .filter {
+
+            height: 46px;
+
+            min-width: 170px;
+
+            padding:
+                0 12px;
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            border-radius: 11px;
+
+            background:
+                #091325;
+
+            color: white;
+
+            outline: none;
+
+        }
+
+        .refresh-btn {
+
+            height: 46px;
+
+            padding:
+                0 16px;
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            border-radius: 11px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            color: white;
+
+        }
+
+
+        /* =================================================
+           TICKET LIST
+        ================================================= */
+
+        #ticketList {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 15px;
+
+        }
+
+        .ticket-card {
+
+            width: 100%;
+
+            padding: 20px;
+
+            text-align: left;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 17px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            color: white;
+
+            transition:
+                transform .18s ease,
+                border-color .18s ease,
+                background .18s ease;
+
+        }
+
+        .ticket-card:hover {
+
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(0,210,255,.30);
+
+            background:
+                rgba(255,255,255,.055);
+
+        }
+
+        .ticket-card-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-bottom: 13px;
+
+        }
+
+        .ticket-number {
+
+            color: #75849d;
+
+            font-size: 11px;
+
+            overflow-wrap: anywhere;
+
+        }
+
+        .ticket-status {
+
+            padding:
+                5px 9px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.08);
+
+            color: #c5d0e0;
+
+            font-size: 10px;
+
+            white-space: nowrap;
+
+        }
+
+        .ticket-status.open {
+
+            color: #54ddff;
+
+            background:
+                rgba(84,221,255,.08);
+
+        }
+
+        .ticket-status.in-progress {
+
+            color: #ffd45c;
+
+            background:
+                rgba(255,212,92,.08);
+
+        }
+
+        .ticket-status.closed {
+
+            color: #53e6a8;
+
+            background:
+                rgba(83,230,168,.08);
+
+        }
+
+        .ticket-status.waiting-for-approval {
+
+            color: #ffba63;
+
+            background:
+                rgba(255,186,99,.08);
+
+        }
+
+        .ticket-card h3 {
+
+            margin-bottom: 8px;
+
+            font-size: 16px;
+
+        }
+
+        .ticket-preview {
+
+            display: -webkit-box;
+
+            -webkit-line-clamp: 2;
+
+            -webkit-box-orient: vertical;
+
+            overflow: hidden;
+
+            min-height: 42px;
+
+            color: #8e9bb0;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+        }
+
+        .ticket-card-info {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 7px;
+
+            margin-top: 16px;
+
+            color: #9aa8bd;
+
+            font-size: 11px;
+
+        }
+
+        .ticket-card-info span {
+
+            overflow-wrap: anywhere;
+
+        }
+
+        .ticket-card-bottom {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 17px;
+
+            padding-top: 13px;
+
+            border-top:
+                1px solid rgba(255,255,255,.06);
+
+            color: #687790;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =================================================
+           EMPTY
+        ================================================= */
+
+        .empty-state {
+
+            grid-column:
+                1 / -1;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            border:
+                1px dashed rgba(255,255,255,.10);
+
+            border-radius: 18px;
+
+            color: #75839a;
+
+        }
+
+        .empty-state > div {
+
+            font-size: 36px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .empty-state h3 {
+
+            color: white;
+
+            margin-bottom: 6px;
+
+        }
+
+        .empty-state p {
+
+            font-size: 12px;
+
+        }
+
+
+        /* =================================================
+           MODAL
+        ================================================= */
+
+        .overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 100;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 18px;
+
+            background:
+                rgba(0,0,0,.72);
+
+            backdrop-filter:
+                blur(8px);
+
+        }
+
+        .modal {
+
+            width: min(
+                900px,
+                100%
+            );
+
+            max-height:
+                calc(100vh - 36px);
+
+            overflow-y: auto;
+
+            padding: 25px;
+
+            border:
+                1px solid rgba(255,255,255,.10);
+
+            border-radius: 20px;
+
+            background:
+                #071021;
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.55);
+
+        }
+
+        .modal-header {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 22px;
+
+        }
+
+        .modal-header h2 {
+
+            font-size: 19px;
+
+        }
+
+        .modal-header p {
+
+            margin-top: 4px;
+
+            color: #728199;
+
+            font-size: 11px;
+
+        }
+
+        .close-btn {
+
+            width: 38px;
+            height: 38px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            color: white;
+
+        }
+
+        .details-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .detail {
+
+            padding: 13px;
+
+            border-radius: 11px;
+
+            background:
+                rgba(255,255,255,.035);
+
+        }
+
+        .detail label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #65748c;
+
+            font-size: 10px;
+
+        }
+
+        .detail span {
+
+            color: #dbe3ef;
+
+            font-size: 12px;
+
+            overflow-wrap: anywhere;
+
+        }
+
+        .problem {
+
+            padding: 17px;
+
+            margin-bottom: 18px;
+
+            border:
+                1px solid rgba(255,255,255,.06);
+
+            border-radius: 13px;
+
+            background:
+                rgba(255,255,255,.025);
+
+        }
+
+        .problem h3 {
+
+            margin-bottom: 9px;
+
+            font-size: 13px;
+
+        }
+
+        .problem p {
+
+            color: #9ba8ba;
+
+            font-size: 12px;
+
+            line-height: 1.75;
+
+            white-space: pre-wrap;
+
+            overflow-wrap: anywhere;
+
+        }
+
+        .actions {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+        }
+
+        .action-btn {
+
+            min-height: 44px;
+
+            padding: 8px 12px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.05);
+
+            color: white;
+
+        }
+
+        .action-btn:hover {
+
+            background:
+                rgba(255,255,255,.09);
+
+        }
+
+        .action-btn.primary {
+
+            background:
+                rgba(0,200,255,.10);
+
+            border-color:
+                rgba(0,200,255,.22);
+
+        }
+
+        .reply-box {
+
+            margin-top: 10px;
+
+        }
+
+        .reply-box label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #9ba8ba;
+
+            font-size: 12px;
+
+        }
+
+        .reply-box textarea {
+
+            width: 100%;
+
+            min-height: 120px;
+
+            padding: 13px;
+
+            resize: vertical;
+
+            outline: none;
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            color: white;
+
+            line-height: 1.6;
+
+        }
+
+        .reply-box textarea:focus {
+
+            border-color: #00c8ff;
+
+        }
+
+        .save-reply {
+
+            margin-top: 10px;
+
+            padding:
+                10px 16px;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00bfff,
+                    #635bff
+                );
+
+            color: white;
+
+            font-weight: 600;
+
+        }
+
+        .claim {
+
+            width: 100%;
+
+            margin-bottom: 16px;
+
+            padding: 12px;
+
+            border:
+                1px solid rgba(83,230,168,.20);
+
+            border-radius: 10px;
+
+            background:
+                rgba(83,230,168,.06);
+
+            color: #53e6a8;
+
+        }
+
+        .claim:disabled {
+
+            cursor: not-allowed;
+
+            opacity: .6;
+
+        }
+
+        #modalMessage {
+
+            min-height: 20px;
+
+            margin-top: 14px;
+
+            text-align: center;
+
+            color: #53e6a8;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================= */
+
+        @media (max-width: 850px) {
+
+            .stats-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            #ticketList {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .details-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    calc(100% - 20px);
+
+                margin-top: 20px;
+
+            }
+
+            .topbar {
+
+                padding:
+                    10px;
+
+            }
+
+            .brand h1 {
+
+                font-size: 13px;
+
+            }
+
+            .brand p {
+
+                font-size: 9px;
+
+            }
+
+            .controls {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+            .filter {
+
+                width: 100%;
+
+            }
+
+            .refresh-btn {
+
+                width: 100%;
+
+            }
+
+            .details-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .actions {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .modal {
+
+                padding: 18px;
+
+                border-radius: 16px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+        <div>
+
+            <h1>
+                AGENT HELP CENTER
+            </h1>
+
+            <p>
+                APS Robotics Championship 2026
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        id="logoutBtn"
+        class="logout-btn"
+        type="button"
+    >
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </button>
+
+</header>
+
+
+<main class="container">
+
+
+    <div class="page-heading">
+
+        <h2>
+            Support Dashboard
+        </h2>
+
+        <p>
+            Manage and respond to participant support requests.
+        </p>
+
+    </div>
+
+
+    <div
+        id="statusMessage"
+        class="status-message"
+    >
+        Connecting to support database...
+    </div>
+
+
+    <!-- =================================================
+         STATS
+    ================================================== -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-ticket"></i>
+
+            <strong id="totalTickets">
+                0
+            </strong>
+
+            <span>
+                Total Tickets
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            <strong id="openTickets">
+                0
+            </strong>
+
+            <span>
+                Open / Waiting
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-spinner"></i>
+
+            <strong id="progressTickets">
+                0
+            </strong>
+
+            <span>
+                In Progress
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <strong id="closedTickets">
+                0
+            </strong>
+
+            <span>
+                Closed
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CONTROLS
+    ================================================== -->
+
+    <section class="controls">
+
+        <div class="search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Search tickets, name, email, reference..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <select
+            id="statusFilter"
+            class="filter"
+        >
+
+            <option value="All">
+                All Statuses
+            </option>
+
+            <option value="Waiting for Approval">
+                Waiting for Approval
+            </option>
+
+            <option value="Open">
+                Open
+            </option>
+
+            <option value="In Progress">
+                In Progress
+            </option>
+
+            <option value="Closed">
+                Closed
+            </option>
+
+        </select>
+
+
+        <button
+            id="refreshBtn"
+            class="refresh-btn"
+            type="button"
+        >
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+    </section>
+
+
+    <!-- =================================================
+         TICKETS
+    ================================================== -->
+
+    <section id="ticketList">
+
+        <div class="empty-state">
+
+            <div>
+                🎫
+            </div>
+
+            <h3>
+                Loading tickets...
+            </h3>
+
+            <p>
+                Connecting to Firebase.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     TICKET MODAL
+====================================================== -->
+
+<div
+    id="ticketOverlay"
+    class="overlay hidden"
+>
+
+    <div class="modal">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2 id="modalSubject">
+                    Support Ticket
+                </h2>
+
+                <p>
+                    Ticket:
+                    <span id="modalTicketId">
+                        -
+                    </span>
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close-btn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             DETAILS
+        ================================================== -->
+
+        <div class="details-grid">
+
+
+            <div class="detail">
+
+                <label>
+                    Name
+                </label>
+
+                <span id="modalName">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Registration ID
+                </label>
+
+                <span id="modalRegistrationId">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Help Reference
+                </label>
+
+                <span id="modalReferenceId">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Class
+                </label>
+
+                <span id="modalClass">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Section
+                </label>
+
+                <span id="modalSection">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Email
+                </label>
+
+                <span id="modalEmail">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Category
+                </label>
+
+                <span id="modalCategory">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Status
+                </label>
+
+                <span id="modalStatus">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Priority
+                </label>
+
+                <span id="modalPriority">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Progress
+                </label>
+
+                <span id="modalProgress">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Created
+                </label>
+
+                <span id="modalCreated">
+                    -
+                </span>
+
+            </div>
+
+
+            <div class="detail">
+
+                <label>
+                    Updated
+                </label>
+
+                <span id="modalUpdated">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PROBLEM
+        ================================================== -->
+
+        <div class="problem">
+
+            <h3 id="problemSubject">
+                Problem
+            </h3>
+
+            <p id="problemMessage">
+                -
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             CLAIM
+        ================================================== -->
+
+        <button
+            id="claimTicketBtn"
+            class="claim"
+            type="button"
+        >
+            Claim Ticket
+        </button>
+
+
+        <!-- =================================================
+             STATUS ACTIONS
+        ================================================== -->
+
+        <div class="actions">
+
+            <button
+                id="setOpenBtn"
+                class="action-btn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Set Open
+
+            </button>
+
+
+            <button
+                id="setProgressBtn"
+                class="action-btn primary"
+                type="button"
+            >
+
+                <i class="fa-solid fa-spinner"></i>
+
+                In Progress
+
+            </button>
+
+
+            <button
+                id="setClosedBtn"
+                class="action-btn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-check"></i>
+
+                Mark Solved
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             REPLY
+        ================================================== -->
+
+        <div class="reply-box">
+
+            <label for="agentReply">
+                Agent Reply
+            </label>
+
+            <textarea
+                id="agentReply"
+                placeholder="Write your response to the participant..."
+            ></textarea>
+
+
+            <button
+                id="saveReplyBtn"
+                class="save-reply"
+                type="button"
+            >
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Save Reply
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="modalMessage"
+        ></div>
+
+
+    </div>
+
+</div>
+
+
+<script
+    type="module"
+    src="./agent.js"
+></script>
+
+
+</body>
+
+    </html>
